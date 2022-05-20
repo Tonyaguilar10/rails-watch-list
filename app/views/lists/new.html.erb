@@ -1,4 +1,6 @@
 <%= simple_form_for(@list) do |f| %>
   <%= f.input :name %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit "Add List", class: "btn btn-primary" %>
 <% end %>
+<%= link_to "MoviesDex Home", root_path %>
