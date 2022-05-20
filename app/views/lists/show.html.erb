@@ -1,0 +1,9 @@
+<h2><%= @list.name %></h2>
+<br>
+<div>
+  <ul class="list-inline">
+  <% @list.movies.each do |movie| %>
+    <li><%= movie.title %><%="⭐" * movie.rating %></li>
+  <% end %>
+  </ul>
+  <%= link_to "add a movie to your list", new_list_bookmark_path(@list) %>

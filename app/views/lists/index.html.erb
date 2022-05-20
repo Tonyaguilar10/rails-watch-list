@@ -1,0 +1,17 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://64.media.tumblr.com/8f5c3a888241acd969627b9149921be8/tumblr_o1ayx4ncFd1rfd7lko1_400.gifv);">
+  <div class="container">
+    <h1>Movie list!</h1>
+    <p>Create your watchlist of movies</p>
+  </div>
+</div>
+<div class="container">
+  <ul>
+  <% @lists.each do |list| %>
+    <div class="card-category">
+    <li><%= link_to list.name, list_path(list) %>| <%= link_to "delete list", list_path(list), method: :delete,
+            data: { confirm: "Are you sure?" } %> </li>
+    </div>
+  <% end %>
+  </ul>
+</div>
+<%= link_to 'Add a list', new_list_path %>
